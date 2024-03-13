@@ -1,3 +1,7 @@
+# Music Player MVC
+
+Um reprodutor de música simples implementado usando o padrão MVC (Model-View-Controller) com Node.js, Express e EJS.
+
 # Estrutura das pastas
 
 ```
@@ -22,10 +26,6 @@ src
 |-- app.js
 |-- routes.js
 ```
-
-# Music Player MVC
-
-Um reprodutor de música simples implementado usando o padrão MVC (Model-View-Controller) com Node.js, Express e EJS.
 
 ## Instalação
 
