@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Music</title>
+</head>
+
+<body>
+    <h1>Tocando Agora</h1>
+    <h2>
+        <%= music.nome %> - <%= music.titulo %>
+    </h2>
+    <img src="/<%= music.imagem %>" alt="Album Image">
+    <audio controls autoplay>
+        <source src="/<%= music.musica %>" type="audio/mpeg">
+        A sua navegador não suporta o elemento de áudio.
+    </audio>
+    <% if (prevMusic) { %>
+        <a href="/prev/<%= music.id %>">Anterior</a>
+        <% } %>
+            <% if (nextMusic) { %>
+                <a href="/next/<%= music.id %>">Próxima</a>
+                <% } %>
+                    <a href="/">Voltar para Todas as Músicas</a>
+                    <a href="/favorites">Favoritos</a>
+</body>
+
+</html>
