@@ -1,0 +1,29 @@
+[
+    {
+        "id": 1,
+        "nome": "Bob Dylan",
+        "cantor": "Bob Dylan",
+        "titulo": "Masters of War (The Avener Rework)",
+        "duracao": "03:11",
+        "imagem": "img/Bob Dylan - Masters of War.png",
+        "musica": "music/Bob Dylan - Masters of War (The Avener Rework).mp3"
+    },
+    {
+        "id": 2,
+        "nome": "Led Zeppelin",
+        "cantor": "Led Zeppelin",
+        "titulo": "Whole Lotta Love",
+        "duracao": "04:48",
+        "imagem": "img/Led Zeppelin - Whole Lotta Love.png",
+        "musica": "music/Led Zeppelin - Whole Lotta Love.mp3"
+    },
+    {
+        "id": 3,
+        "nome": "Black Sabbath",
+        "cantor": "Black Sabbath",
+        "titulo": "Iron Man",
+        "duracao": "06:23",
+        "imagem": "img/Black Sabbath - Iron Man.png",
+        "musica": "music/Black Sabbath - Iron Man(2012 - Remaster).mp3"
+    }
+]
