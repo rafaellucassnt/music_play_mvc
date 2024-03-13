@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favoritos</title>
+</head>
+
+<body>
+    <h1>Músicas Favoritas</h1>
+    <ul>
+        <% favorites.forEach(music=> { %>
+            <li>
+                <a href="/play/<%= music.id %>">
+                    <%= music.nome %> - <%= music.titulo %>
+                </a>
+                <a href="/removeFavorite/<%= music.id %>">Remover dos Favoritos</a>
+            </li>
+            <% }); %>
+    </ul>
+    <a href="/">Voltar para a Lista de Músicas</a>
+</body>
+
+</html>
