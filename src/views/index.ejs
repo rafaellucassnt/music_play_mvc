@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+</head>
+
+<body>
+    <h1>Todas as Músicas</h1>
+    <ul>
+        <% musicList.forEach(music=> { %>
+            <li>
+                <a href="/play/<%= music.id %>">
+                    <%= music.nome %> - <%= music.titulo %>
+                </a>
+                <a href="/addFavorite/<%= music.id %>">Add aos Favoritos</a>
+            </li>
+            <% }); %>
+    </ul>
+    <h2><a href="/favorites">Favoritos</a></h2>
+</body>
+
+</html>
