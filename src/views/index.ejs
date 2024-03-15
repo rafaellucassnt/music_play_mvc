@@ -5,21 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music Player</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <h1>Todas as Músicas</h1>
-    <ul>
-        <% musicList.forEach(music=> { %>
-            <li>
-                <a href="/play/<%= music.id %>">
-                    <%= music.nome %> - <%= music.titulo %>
-                </a>
-                <a href="/addFavorite/<%= music.id %>">Add aos Favoritos</a>
-            </li>
-            <% }); %>
-    </ul>
-    <h2><a href="/favorites">Favoritos</a></h2>
+<body class="bg-gray-900 text-white font-sans">
+
+    <header class="bg-gray-800 py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-xl font-bold">Music Play</h1>
+            <a href="/favorites" class="text-white text-sm hover:underline">Favoritos</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8">
+        <h1 class="text-xl font-bold pb-8">Lista de Músicas</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <% musicList.forEach(music=> { %>
+                <div class="bg-gray-800 rounded-md overflow-hidden shadow-md flex flex-col items-center">
+                    <img src="/<%= music.imagem %>" alt="Album Image" class="h-48 w-48 object-cover rounded-t-md">
+                    <div class="p-4 flex flex-col justify-between w-full">
+                        <div class="flex justify-between items-center w-full">
+                            <h2 class="text-lg font-semibold mb-2">
+                                <%= music.nome %>
+                            </h2>
+                            <a href="/addFavorite/<%= music.id %>" class="text-white text-xl hover:underline"><i
+                                    class="far fa-heart"></i></a>
+                        </div>
+                        <h3 class="text-base font-semibold mb-2">
+                            <%= music.titulo %>
+                        </h3>
+                        <div class="flex justify-center items-center w-full">
+                            <a href="/play/<%= music.id %>" class="text-blue-500 hover:text-blue-400 text-2xl"><i
+                                    class="fas fa-play"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 py-4">
+        <div class="container mx-auto text-center">
+            <p class="text-sm text-gray-500">© 2024 Music Player. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>
