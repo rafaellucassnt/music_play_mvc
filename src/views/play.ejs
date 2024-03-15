@@ -5,26 +5,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Play Music</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 
-<body>
-    <h1>Tocando Agora</h1>
-    <h2>
-        <%= music.nome %> - <%= music.titulo %>
-    </h2>
-    <img src="/<%= music.imagem %>" alt="Album Image">
-    <audio controls autoplay>
-        <source src="/<%= music.musica %>" type="audio/mpeg">
-        A sua navegador não suporta o elemento de áudio.
-    </audio>
-    <% if (prevMusic) { %>
-        <a href="/prev/<%= music.id %>">Anterior</a>
-        <% } %>
-            <% if (nextMusic) { %>
-                <a href="/next/<%= music.id %>">Próxima</a>
-                <% } %>
-                    <a href="/">Voltar para Todas as Músicas</a>
-                    <a href="/favorites">Favoritos</a>
+<body class="bg-gray-900 text-white font-sans">
+    <header class="bg-gray-800 py-4">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-xl font-bold">Music Play</h1>
+            <a href="/" class="text-white text-sm hover:underline">Voltar para Todas as Músicas</a>
+            <a href="/favorites" class="text-white text-sm hover:underline">Favoritos</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto py-8 flex flex-col items-center">
+        <h1 class="text-xl font-bold">Tocando Agora</h1>
+        <h2 class="text-2xl font-semibold mb-4">
+            <%= music.nome %> - <%= music.titulo %>
+        </h2>
+        <div class="flex justify-between w-full max-w-lg mt-4">
+            <div class="flex-2 self-center">
+                <% if (prevMusic) { %>
+                    <a href="/prev/<%= music.id %>" class="text-blue-500 hover:text-blue-400 text-2xl"><i
+                            class="fas fa-backward"></i></a>
+                    <% } %>
+
+            </div>
+            <div class="flex-10">
+                <img src="/<%= music.imagem %>" alt="Album Image"
+                    class="h-64 w-64 object-cover rounded-lg shadow-md mb-4">
+            </div>
+            <div class="flex-2 self-center">
+                <% if (nextMusic) { %>
+                    <a href="/next/<%= music.id %>" class="text-blue-500 hover:text-blue-400 text-2xl"><i
+                            class="fas fa-forward"></i></a>
+                    <% } %>
+
+            </div>
+        </div>
+        <audio controls autoplay class="w-full max-w-lg">
+            <source src="/<%= music.musica %>" type="audio/mpeg">
+            A sua navegador não suporta o elemento de áudio.
+        </audio>
+    </main>
+
+    <footer class="bg-gray-800 py-4">
+        <div class="container mx-auto text-center">
+            <p class="text-sm text-gray-500">© 2024 Music Player. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
 </body>
 
 </html>
