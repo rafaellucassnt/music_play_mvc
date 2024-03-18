@@ -46,3 +46,12 @@ Para iniciar o servidor, você pode usar o comando `npm start`
 Ou, se você quiser usar o Nodemon para reiniciar automaticamente o servidor quando houver alterações nos arquivos, você pode usar o comando `npm run dev`
 
 Isso iniciará o servidor na porta padrão 3000. Você pode acessar o aplicativo em seu navegador visitando [http://localhost:3000](http://localhost:3000).
+
+## Endpoints
+
+'/play/:id'
+'/favorites'
+'/addFavorite/:id'
+'/removeFavorite/:id'
+'/next/:id'
+'/prev/:id'
