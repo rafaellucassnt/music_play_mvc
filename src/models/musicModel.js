@@ -18,7 +18,6 @@ function loadMusicList() {
     }
 }
 
-// Carregar a lista de músicas no início
 loadMusicList();
 
 const musicModel = {
