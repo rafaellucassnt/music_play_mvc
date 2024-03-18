@@ -49,9 +49,11 @@ Isso iniciará o servidor na porta padrão 3000. Você pode acessar o aplicativo
 
 ## Endpoints
 
+```
 '/play/:id'
 '/favorites'
 '/addFavorite/:id'
 '/removeFavorite/:id'
 '/next/:id'
 '/prev/:id'
+```
